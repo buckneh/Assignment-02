@@ -1,0 +1,23 @@
+---
+title: "Assignment 02"
+author: "YOUR NAME"
+date: "5/20/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+## One factor ANOVA example from Dobson's book, cf. Table 7.4:
+
+The average weight of the control group is `r mean(PlantGrowth[PlantGrowth$group=="ctrl",1])` while the second treatment group's average was `r mean(PlantGrowth[PlantGrowth$group=="trt2",1])`.
+
+```{r code }
+boxplot(weight ~ group, data = PlantGrowth, main = "PlantGrowth data",
+        ylab = "Dried weight of plants", col = "lightgray",
+        notch = FALSE, varwidth = TRUE)
+anova(lm(weight ~ group, data = PlantGrowth))
+```
