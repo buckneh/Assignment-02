@@ -2,22 +2,42 @@
 title: "Assignment 02"
 author: "YOUR NAME"
 date: "5/20/2020"
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+## Results from an Experiment on Plant Growth
 
-## One factor ANOVA example from Dobson's book, cf. Table 7.4:
+**Description:** Results from an experiment to compare yields (as measured by dried weight of plants) obtained under a control and two different treatment conditions.
 
-The average weight of the control group is `r mean(PlantGrowth[PlantGrowth$group=="ctrl",1])` while the second treatment group's average was `r mean(PlantGrowth[PlantGrowth$group=="trt2",1])`.
+**Source:** Dobson, A. J. (1983) _An Introduction to Statistical Modelling_. London: Chapman and Hall.
 
-```{r code }
-boxplot(weight ~ group, data = PlantGrowth, main = "PlantGrowth data",
-        ylab = "Dried weight of plants", col = "lightgray",
-        notch = FALSE, varwidth = TRUE)
-anova(lm(weight ~ group, data = PlantGrowth))
+## Analysis
+
+>>Replace the `XXX` in the code below with the necessary R instructions to give the mean values for each factor level of this dataset in a pretty little table. Hint - the comparison and dataset are the same as in the barplot. You will want to use the function (FUN) of `mean`.
+
+`r knitr::kable(aggregate(XXX))`
+
+```{r barplot}
+boxplot(weight ~ group,                             # compare weight by group
+		data = PlantGrowth,                         # built-in data set
+		main = "Distribution of Growth Data",       # set title
+		las = 1,                                    # rotate y-axis values
+        ylab = "Dried weight of plants",            # set y-axis title
+		xlab = "Group",                             # set x-axis title
+		ylim = c(0,10),                             # set scale of y-axis
+		col = c("ivory2","ivory3","ivory4"))        # set bar fill colors
 ```
+
+>>Edit the barplot above so that the y-axis range plotted is from 3 to 7 and change the colors of the bars to something that you find fun.
+
+```{r anova, fig.cap="One-way ANOVA of Plant Growth Data"}
+knitr::kable(anova(lm(weight ~ group, data = PlantGrowth)),digits = 3)
+```
+
+>>Provide a short summary of the ANOVA analysis summarized above.
