@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Assignment-02 
 
 This is the second assignment for BIOL390: Reproducible Research in the summer of 2020.
@@ -15,4 +14,3 @@ This is the second assignment for BIOL390: Reproducible Research in the summer o
 6) Finally, create a pull request to submit your altered fork to me.
 
 If you can do all that, you will be well on your way to becoming proficient at version control using git and GitHub.
->>>>>>> 62e94c5e451c29a5ab159928dd23f8359aeb7488
