@@ -1,5 +1,5 @@
 ## Assignment-02
-This is the second assignment for BIOL390: Reproducible Research in the summer of 2020. The purpose of this assignment is to familiarize you with the basic functions of git and GitHub. 
+This is the second assignment for BIOL390: Reproducible Research in the spring of 2021. The purpose of this assignment is to familiarize you with the basic functions of git and GitHub. 
 
 1. You will make a personal copy of this project by forking the repo. 
 2. You should then clone the forked repo on your remote to your local machine. 
