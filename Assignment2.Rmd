@@ -1,6 +1,6 @@
 ---
 title: "BIOL390: Assignment 2"
-author: "YOUR NAME"
+author: "Hailey Buckner"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
   html_document: default
@@ -21,7 +21,7 @@ something
 
 >>Replace the `XXX` in the code below with the necessary R instructions to give the mean values for each factor level of this dataset in a pretty little table. Hint - the comparison and dataset are the same as in the barplot. You will want to use the function (FUN) of `mean`.
 
-`r knitr::kable(aggregate(XXX))`
+`r knitr::kable(aggregate(mean(c(data, main, las, ylab, xlab, ylim, col))))`
 
 ```{r barplot}
 boxplot(weight ~ group,                             # compare weight by group
@@ -30,9 +30,10 @@ boxplot(weight ~ group,                             # compare weight by group
 		las = 1,                                    # rotate y-axis values
         ylab = "Dried weight of plants",            # set y-axis title
 		xlab = "Group",                             # set x-axis title
-		ylim = c(0,10),                             # set scale of y-axis
+		ylim = c(3,7),                             # set scale of y-axis
 		col = c("ivory2","ivory3","ivory4"))        # set bar fill colors
-```
+       color = "blue" 
+```     
 
 >>Edit the barplot above so that the y-axis range plotted is from 3 to 7 and change the colors of the bars to something that you find fun.
 
@@ -40,4 +41,4 @@ boxplot(weight ~ group,                             # compare weight by group
 knitr::kable(anova(lm(weight ~ group, data = PlantGrowth)),digits = 3)
 ```
 
->>Provide a short summary of the ANOVA analysis summarized above.
+>>The ANOVA analysis is a graph from weight~group information about the specific plant growth.  This also specifies the digit to three. 
