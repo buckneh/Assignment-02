@@ -1,0 +1,44 @@
+---
+title: "BIOL390: Assignment 2"
+author: "Hailey Buckner"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+something
+## Results from an Experiment on Plant Growth
+
+**Description:** Results from an experiment to compare yields (as measured by dried weight of plants) obtained under a control and two different treatment conditions.
+
+**Source:** Dobson, A. J. (1983) _An Introduction to Statistical Modelling_. London: Chapman and Hall.
+
+## Analysis
+
+>>Replace the `XXX` in the code below with the necessary R instructions to give the mean values for each factor level of this dataset in a pretty little table. Hint - the comparison and dataset are the same as in the barplot. You will want to use the function (FUN) of `mean`.
+
+`r knitr::kable(aggregate(mean(c(data, main, las, ylab, xlab, ylim, col))))`
+
+```{r barplot}
+boxplot(weight ~ group,                             # compare weight by group
+		data = PlantGrowth,                         # built-in data set
+		main = "Distribution of Growth Data",       # set title
+		las = 1,                                    # rotate y-axis values
+        ylab = "Dried weight of plants",            # set y-axis title
+		xlab = "Group",                             # set x-axis title
+		ylim = c(3,7),                             # set scale of y-axis
+		col = c("ivory2","ivory3","ivory4"))        # set bar fill colors
+       color = "blue" 
+```     
+
+>>Edit the barplot above so that the y-axis range plotted is from 3 to 7 and change the colors of the bars to something that you find fun.
+
+```{r anova, fig.cap="One-way ANOVA of Plant Growth Data"}
+knitr::kable(anova(lm(weight ~ group, data = PlantGrowth)),digits = 3)
+```
+
+>>The ANOVA analysis is a graph from weight~group information about the specific plant growth.  This also specifies the digit to three. 
